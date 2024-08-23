@@ -37,11 +37,11 @@ public class GameController : MonoBehaviour
     }
     public void CurremtTime()
     {
-        valueEnergy--;
-        if(valueEnergy == 50) {
+        valueOxygen--;
+        if(valueOxygen == 50) {
             print("Te queda la mitad de oxigeno");
         }
-        if (valueEnergy == 15)
+        if (valueOxygen == 15)
         {
             print("Falta Oxigeno");
         }
