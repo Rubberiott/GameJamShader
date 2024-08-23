@@ -20,10 +20,6 @@ public class InputsController : MonoBehaviour
     [SerializeField] GameIntEvent textOxygen;
     [SerializeField] ColliderOxygen scriptOxygen;
 
-    void Start()
-    {
-        
-    }
 
     void OnEnable()
     {
