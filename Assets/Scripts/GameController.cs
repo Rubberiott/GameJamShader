@@ -13,6 +13,13 @@ public class GameController : MonoBehaviour
     [SerializeField] GameIntEvent textEnergy;
     [SerializeField] GameIntEvent textOxygen;
 
+
+    [Header("Oxigen")]
+    [SerializeField] AudioClip[] audios;
+    [SerializeField] AudioSource audioSour;
+
+    /// RandoValue
+    int randomValue = 0;
     private void Awake()
     {
         valueEnergy.SetValueStar(100);
@@ -39,7 +46,7 @@ public class GameController : MonoBehaviour
     }
     public void OxygenUpdate()
     {
-        if (valueOxygen.valueResources >0)
+        if (valueOxygen.valueResources >=0)
         {
             valueOxygen.SetValue(-1);
             textOxygen.Raise(valueOxygen.valueResources);
@@ -47,5 +54,26 @@ public class GameController : MonoBehaviour
         else {
             Debug.Log("Perdiste");
         }
+        if (valueOxygen.valueResources >= 30 && valueOxygen.valueResources < 45)
+        {
+            GectionSusto();
+        }
+        else if (valueOxygen.valueResources >= 15 && valueOxygen.valueResources < 30)
+        {
+            GectionSusto();
+        }
+        else if (valueOxygen.valueResources > 0 && valueOxygen.valueResources < 15)
+        {
+            GectionSusto();
+        }
     }
+
+    public void GectionSusto()
+    {
+        randomValue = Random.Range(0, audios.Length);
+        audioSour.clip = audios[randomValue];
+        audioSour.Play();
+
+    }
+
 }
