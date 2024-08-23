@@ -15,7 +15,8 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        
+        valueEnergy.SetValueStar(100);
+        valueOxygen.SetValueStar(100);
     }
     private void Start()
     {
@@ -30,7 +31,7 @@ public class GameController : MonoBehaviour
 
     }
     public void InicialitateGame() {
-        InvokeRepeating("CurremtTime",0, timeLowerOxygen);
+        InvokeRepeating("OxygenUpdate", 0, timeLowerOxygen);
     }
     public void EnergyUpdate(int value)
     {
@@ -38,7 +39,13 @@ public class GameController : MonoBehaviour
     }
     public void OxygenUpdate()
     {
-        valueOxygen.SetValue(-1);
-        textOxygen.Raise(valueOxygen.valueResources);
+        if (valueOxygen.valueResources >0)
+        {
+            valueOxygen.SetValue(-1);
+            textOxygen.Raise(valueOxygen.valueResources);
+        }
+        else {
+            Debug.Log("Perdiste");
+        }
     }
 }

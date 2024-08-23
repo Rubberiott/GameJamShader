@@ -8,7 +8,11 @@ public class ResourcesValue : ScriptableObject
     public int valueResources { get; private set; }
     public void SetValue(int value)
     {
-        valueResources = valueResources + value;
+        valueResources = Mathf.Clamp(valueResources + value, 0 , 100);
+    }
+    public void SetValueStar(int value)
+    {
+        valueResources = value;
     }
      
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class InputsController : MonoBehaviour
 {
-    [Header ("InputLeft")]
+    [Header("InputLeft")]
     [SerializeField] InputActionProperty selectActionLeft;
     [SerializeField] GameIntEvent leftPress;
     [Header("InputLeft")]
@@ -16,6 +16,9 @@ public class InputsController : MonoBehaviour
 
     [Header("Oxigen")]
     [SerializeField] ResourcesValue Oxygen;
+    [SerializeField] int quantityRecargaOxigen;
+    [SerializeField] GameIntEvent textOxygen;
+    [SerializeField] ColliderOxygen scriptOxygen;
 
     void Start()
     {
@@ -44,12 +47,17 @@ public class InputsController : MonoBehaviour
 
     private void OnActionPerformedLeft(InputAction.CallbackContext context)
     {
-        leftPress.Raise(2);
+        //leftPress.Raise(2);
+        if (Oxygen.valueResources<100 && scriptOxygen.colision)
+        {
+            InvokeRepeating("OxygenUpdate", 3, 3);
+        }
     }
 
     private void OnActionCanceledLeft(InputAction.CallbackContext context)
     {
-        leftPress.Raise(2);
+        //leftPress.Raise(2);
+        CancelInvoke("OxygenUpdate");
     }
     private void OnActionPerformedRight(InputAction.CallbackContext context)
     {
@@ -62,6 +70,10 @@ public class InputsController : MonoBehaviour
         rightPress.Raise(2);
         linterna.SetActive(false);
     }
-
+    public void OxygenUpdate()
+    {
+        Oxygen.SetValue(quantityRecargaOxigen);
+        textOxygen.Raise(Oxygen.valueResources);
+    }
 
 }
