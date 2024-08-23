@@ -13,7 +13,7 @@ public class MaterialController : MonoBehaviour
 
     void Update()
     {
-        float dissolve = Mathf.PingPong(Time.time, 1.0f);
+        float dissolve = Mathf.PingPong(Time.time, 1);
         material.SetFloat("_DissolveAmount", dissolve);
     }
 }

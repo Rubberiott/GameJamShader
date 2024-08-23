@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class GameController : MonoBehaviour
 {
-    [SerializeField] int valueEnergy = 100;
-    [SerializeField] int valueOxygen = 100;
+    [SerializeField] ResourcesValue valueEnergy;
+    [SerializeField] ResourcesValue valueOxygen;
     [SerializeField] int timeLowerOxygen;
+
+
+    //SO Text
+    [SerializeField] GameIntEvent textEnergy;
+    [SerializeField] GameIntEvent textOxygen;
+
     private void Awake()
     {
-        Invoke("InicialitateGame",0);
+        
     }
     private void Start()
     {
@@ -29,21 +34,11 @@ public class GameController : MonoBehaviour
     }
     public void EnergyUpdate(int value)
     {
-        valueEnergy -= value;
+        valueEnergy.SetValue(value);
     }
-    public void OxygenUpdate(int value)
+    public void OxygenUpdate()
     {
-
-    }
-    public void CurremtTime()
-    {
-        valueOxygen--;
-        if(valueOxygen == 50) {
-            print("Te queda la mitad de oxigeno");
-        }
-        if (valueOxygen == 15)
-        {
-            print("Falta Oxigeno");
-        }
+        valueOxygen.SetValue(-1);
+        textOxygen.Raise(valueOxygen.valueResources);
     }
 }

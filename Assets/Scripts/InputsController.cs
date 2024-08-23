@@ -14,7 +14,8 @@ public class InputsController : MonoBehaviour
     [Header("Linterna")]
     [SerializeField] GameObject linterna;
 
-
+    [Header("Oxigen")]
+    [SerializeField] ResourcesValue Oxygen;
 
     void Start()
     {
