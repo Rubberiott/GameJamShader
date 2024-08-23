@@ -3,7 +3,37 @@ guid: e739d25ec6ba7ec40aa3f6bd3d2cb594
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cueva_final
+    second: {fileID: 2100000, guid: adf502a400ff9344087d503ffe7f1336, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cueva_int
+    second: {fileID: 2100000, guid: 8a5958ec381230c4f8270ef3ecd4ce5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: curva
+    second: {fileID: 2100000, guid: 4cd3e8f61c853fd458c74646362c2425, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: interseccion4
+    second: {fileID: 2100000, guid: af4f36489a09a9045bee8bae699e058c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sala_vacio
+    second: {fileID: 2100000, guid: 6da12c3ead83da142a311256c0a279f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standardSurface1
+    second: {fileID: 2100000, guid: 21bc114cafbb65d4a8f70bde8e89adc3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,17 @@ guid: f4b295bdf9deb2e4989617c1d4f69726
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: linterna
+    second: {fileID: 2100000, guid: 9ee0e5c4e180eb54bbaf642b2394f843, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mascarilla
+    second: {fileID: 2100000, guid: 9b2b666c58b8fe546a5a1108ed591367, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
