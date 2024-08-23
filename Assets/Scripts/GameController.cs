@@ -49,19 +49,19 @@ public class GameController : MonoBehaviour
         }
         if ((valueOxygen.valueResources >= 30 && valueOxygen.valueResources < 45) && valueX !=1)
         {
-            //GestionSusto();
+            GestionSusto();
             Debug.Log("1");
             valueX = 1;
         }
         else if ((valueOxygen.valueResources >= 15 && valueOxygen.valueResources < 30) && valueX != 2)
         {
-            //GestionSusto();
+            GestionSusto();
             Debug.Log("2");
             valueX = 2;
         }
         else if ((valueOxygen.valueResources > 0 && valueOxygen.valueResources < 15) && valueX != 3)
         {
-            //GestionSusto();
+            GestionSusto();
             Debug.Log("3");
             valueX = 3;
         }
