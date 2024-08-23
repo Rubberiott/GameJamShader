@@ -26,17 +26,13 @@ public class GameController : MonoBehaviour
         valueEnergy.SetValueStar(100);
         valueOxygen.SetValueStar(100);
     }
-    private void Start()
-    {
-
-    }
     public void InicialitateGame() {
         InvokeRepeating("OxygenUpdate", 0, timeLowerOxygen);
     }
-    public void EnergyUpdate(int value)
-    {
-        valueEnergy.SetValue(value);
-    }
+    //public void EnergyUpdate(int value)
+    //{
+    //    valueEnergy.SetValue(value);
+    //}
     public void OxygenUpdate()
     {
         if (valueOxygen.valueResources >=0)

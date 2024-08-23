@@ -6,6 +6,6 @@ public class Testing : MonoBehaviour
 {
     public void Testeo()
     {
-        print("Hola");
+        print("Testing");
     }
 }
