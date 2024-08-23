@@ -20,20 +20,13 @@ public class GameController : MonoBehaviour
 
     /// RandoValue
     int randomValue = 0;
+    [SerializeField] int valueX =0;
     private void Awake()
     {
         valueEnergy.SetValueStar(100);
         valueOxygen.SetValueStar(100);
     }
     private void Start()
-    {
-
-    }
-    private void Update()
-    {
-
-    }
-    private void FixedUpdate()
     {
 
     }
@@ -54,26 +47,31 @@ public class GameController : MonoBehaviour
         else {
             Debug.Log("Perdiste");
         }
-        if (valueOxygen.valueResources >= 30 && valueOxygen.valueResources < 45)
+        if ((valueOxygen.valueResources >= 30 && valueOxygen.valueResources < 45) && valueX !=1)
         {
-            GectionSusto();
+            //GestionSusto();
+            Debug.Log("1");
+            valueX = 1;
         }
-        else if (valueOxygen.valueResources >= 15 && valueOxygen.valueResources < 30)
+        else if ((valueOxygen.valueResources >= 15 && valueOxygen.valueResources < 30) && valueX != 2)
         {
-            GectionSusto();
+            //GestionSusto();
+            Debug.Log("2");
+            valueX = 2;
         }
-        else if (valueOxygen.valueResources > 0 && valueOxygen.valueResources < 15)
+        else if ((valueOxygen.valueResources > 0 && valueOxygen.valueResources < 15) && valueX != 3)
         {
-            GectionSusto();
+            //GestionSusto();
+            Debug.Log("3");
+            valueX = 3;
         }
     }
 
-    public void GectionSusto()
+    public void GestionSusto()
     {
         randomValue = Random.Range(0, audios.Length);
         audioSour.clip = audios[randomValue];
         audioSour.Play();
-
     }
 
 }
