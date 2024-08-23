@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Resources", menuName = "ScriptableObjects/Resources", order = 1)]
 public class ResourcesValue : ScriptableObject
 {
-    public int valueResources { get; private set; }
+    public int valueResources;
     public void SetValue(int value)
     {
         valueResources = Mathf.Clamp(valueResources + value, 0 , 100);

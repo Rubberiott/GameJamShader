@@ -4,4 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private Rigidbody myRB;
+    private void Awake()
+    {
+        myRB = GetComponent<Rigidbody>();
+    }
 }
